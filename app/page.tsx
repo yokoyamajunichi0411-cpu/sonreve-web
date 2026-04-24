@@ -1,237 +1,213 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
+import DressCard from "@/components/ui/DressCard";
+import { dresses } from "@/lib/dresses";
+import HeroSection from "./HeroSection";
 
-const dresses = [
-  { id: 1, name: "Lumière", name_ja: "リュミエール", style: "Aライン" },
-  { id: 2, name: "Céleste", name_ja: "セレスト", style: "マーメイド" },
-  { id: 3, name: "Aurore", name_ja: "オーロール", style: "ボールガウン" },
+export const metadata: Metadata = {
+  title: "son rêve | 韓国ウェディングドレスレンタル・前撮り 大阪",
+  description: "大阪発の韓国ウェディングドレスレンタル・前撮りブランド。ソウルのアトリエと直接提携し、最新コレクションをご提案。ドレスレンタルからヘアメイク・撮影まで一括対応。関西全域対応。",
+  alternates: { canonical: "https://sonreve.jp/" },
+  openGraph: {
+    title: "son rêve | 韓国ウェディングドレスレンタル・前撮り 大阪",
+    description: "大阪発の韓国ウェディングドレスレンタル・前撮りブランド。ドレスレンタルから撮影まで一括対応。",
+    url: "https://sonreve.jp/",
+  },
+};
+
+const photoScrollImages = [
+  "/dressphoto/IMG_8010.JPG",
+  "/dressphoto/IMG_8012.JPG",
+  "/dressphoto/IMG_8013.JPG",
+  "/dressphoto/IMG_8014.JPG",
+  "/dressphoto/IMG_8015.JPG",
+  "/dressphoto/IMG_8016.JPG",
+  "/dressphoto/IMG_8017.JPG",
+  "/dressphoto/IMG_8018.JPG",
+  "/dressphoto/IMG_8019.JPG",
+  "/dressphoto/IMG_8020.JPG",
 ];
 
-const features = [
+const infoCards = [
   {
-    icon: "✦",
-    title: "韓国直輸入ドレス",
-    desc: "ソウルの一流アトリエから厳選した最新コレクション。トレンドを押さえたデザインをご用意しています。",
+    label: "Collection",
+    title: "Collection",
+    desc: "韓国直輸入の最新ウェディングドレスを多数ご用意。あなただけの一着を見つけてください。",
+    href: "/collection",
+    image: "/dressphoto/IMG_8014.JPG",
   },
   {
-    icon: "✦",
-    title: "レンタル＋撮影 一括対応",
-    desc: "ドレスのレンタルから写真撮影まで、すべてをワンストップでご提供。準備の手間を最小限に。",
+    label: "Photo Plan",
+    title: "Photo Plan",
+    desc: "ドレスレンタルから撮影まで一括対応。ヘアメイク・着付け込みのプランをご用意しています。",
+    href: "/photo-plan",
+    image: "/dressphoto/IMG_8019.JPG",
   },
   {
-    icon: "✦",
-    title: "ヘアメイク込みプラン",
-    desc: "ブライダル専門のヘアメイクアーティストが当日のスタイリングを担当します。",
+    label: "Reservation",
+    title: "Reservation",
+    desc: "まずはお気軽にご連絡ください。夢の形がまだ決まっていなくても大丈夫です。",
+    href: "/reservation",
+    image: "/dressphoto/IMG_8022.JPG",
   },
 ];
 
 export default function HomePage() {
   return (
     <div>
-      {/* ── Hero ── */}
-      <section className="relative w-full h-[100svh] overflow-hidden bg-cream flex items-center justify-center">
-        {/* Placeholder: replace with actual hero image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blush/60 via-cream/40 to-background/80" />
 
-        {/* Hero image slot */}
-        <div className="absolute inset-0 bg-[#EDE8E3]" />
+      {/* HERO */}
+      <HeroSection />
 
-        <div className="relative z-10 text-center px-6">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="text-[11px] tracking-[0.45em] uppercase text-foreground/50 mb-6"
-          >
-            Korean Wedding Dress Rental & Photography
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            className="text-6xl lg:text-8xl font-light tracking-[0.15em] text-foreground mb-8 leading-none"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
-          >
-            on rêve
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="text-sm text-foreground/55 tracking-[0.2em] mb-12"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
-          >
-            夢を纏う、特別な一日
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link
-              href="/collection"
-              className="px-10 py-3.5 bg-foreground text-white text-[11px] tracking-[0.3em] uppercase hover:bg-foreground/80 transition-all duration-300"
-            >
-              Collection
-            </Link>
-            <Link
-              href="/plan"
-              className="px-10 py-3.5 border border-foreground/30 text-foreground text-[11px] tracking-[0.3em] uppercase hover:bg-foreground/5 transition-all duration-300"
-            >
-              Plan & Price
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-[9px] tracking-[0.35em] uppercase text-foreground/30">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-px h-8 bg-foreground/20"
-          />
-        </motion.div>
-      </section>
-
-      {/* ── Concept ── */}
-      <section className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32 text-center">
+      {/* BRAND INTRO */}
+      <section className="py-20 lg:py-28 px-8 lg:px-16 max-w-5xl mx-auto text-center">
         <FadeIn>
-          <p className="text-[10px] tracking-[0.45em] uppercase text-gold mb-8">Our Concept</p>
-          <h2 className="text-3xl lg:text-4xl font-light tracking-wide text-foreground mb-8 leading-relaxed"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            韓国の美しさを、日本の花嫁へ
+          <p className="text-[10px] tracking-[0.5em] uppercase text-foreground/30 mb-8">son rêve — ソン・レーヴ</p>
+          <h2
+            className="text-3xl lg:text-5xl font-light text-foreground leading-[1.3] mb-8"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          >
+            ふたりの夢が、交わる場所。
           </h2>
-          <p className="text-sm text-foreground/60 tracking-wider leading-[2.2] max-w-xl mx-auto">
-            on rêveは、韓国の最旬ウェディングドレスを大阪からご提案するブランドです。
-            ドレスのレンタルから前撮り・当日撮影まで、大切な一日のすべてに寄り添います。
-            上質なドレスと洗練された写真で、あなただけの物語を。
+          <p className="text-sm text-foreground/50 leading-loose tracking-wider max-w-lg mx-auto">
+            韓国の洗練されたウェディングドレスを大阪からご提案。
+            ドレスレンタルから前撮り・当日撮影まで、
+            大切な一日のすべてに寄り添います。
           </p>
         </FadeIn>
       </section>
 
-      {/* ── Featured Dresses ── */}
-      <section className="bg-muted py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <p className="text-[10px] tracking-[0.45em] uppercase text-foreground/35 mb-3 text-center">Collection</p>
-            <p className="text-2xl lg:text-3xl font-light tracking-wider text-center mb-14"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              New Arrivals
+      {/* DRESS COLLECTION */}
+      <section className="py-20 lg:py-28 px-8 lg:px-16">
+        <FadeIn>
+          <div className="flex items-baseline justify-between mb-14">
+            <p
+              className="text-2xl lg:text-3xl font-light text-foreground"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
+            >
+              Dress Collection
             </p>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {dresses.map((dress, i) => (
-              <FadeIn key={dress.id} delay={i * 0.12}>
-                <Link href="/collection" className="group block">
-                  {/* Dress image placeholder */}
-                  <div className="relative aspect-[3/4] bg-blush/50 overflow-hidden mb-4">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-foreground/5" />
-                    <div className="absolute bottom-4 left-4">
-                      <span className="text-[9px] tracking-[0.3em] uppercase text-foreground/40 bg-background/80 px-2 py-1">
-                        {dress.style}
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
-                  </div>
-                  <div className="flex items-baseline justify-between px-1">
-                    <span
-                      className="text-base text-foreground/80 tracking-wide"
-                      style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
-                    >
-                      {dress.name}
-                    </span>
-                    <span className="text-[11px] text-foreground/40 tracking-wider">
-                      {dress.name_ja}
-                    </span>
-                  </div>
-                </Link>
-              </FadeIn>
-            ))}
+            <Link
+              href="/collection"
+              className="text-[11px] tracking-[0.25em] uppercase text-foreground/35 hover:text-foreground/70 transition-colors duration-300 border-b border-foreground/15 pb-px"
+            >
+              view ALL
+            </Link>
           </div>
-          <FadeIn delay={0.3}>
-            <div className="text-center mt-12">
-              <Link
-                href="/collection"
-                className="inline-block text-[11px] tracking-[0.3em] uppercase text-foreground/50 border-b border-foreground/20 pb-px hover:text-foreground hover:border-foreground/60 transition-all duration-300"
+        </FadeIn>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12">
+          {dresses.map((dress, i) => (
+            <DressCard
+              key={dress.slug}
+              slug={dress.slug}
+              name={dress.name}
+              year={dress.year}
+              image={dress.images[0]}
+              delay={i * 0.06}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* PHOTO PLAN SCROLL */}
+      <section className="py-20 lg:py-28 bg-muted">
+        <div className="px-8 lg:px-16 mb-10">
+          <FadeIn>
+            <div className="flex items-baseline justify-between">
+              <p
+                className="text-2xl lg:text-3xl font-light text-foreground"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
               >
-                View All Collection
+                Photo Plan
+              </p>
+              <Link
+                href="/photo-plan"
+                className="hidden md:block text-[11px] tracking-[0.25em] uppercase text-foreground/35 hover:text-foreground/70 transition-colors duration-300 border-b border-foreground/15 pb-px"
+              >
+                view ALL
               </Link>
             </div>
           </FadeIn>
         </div>
+        <div className="flex gap-3 overflow-x-auto px-8 lg:px-16 pb-4 scrollbar-none">
+          {photoScrollImages.map((src, i) => (
+            <FadeIn key={i} delay={i * 0.04} className="flex-shrink-0">
+              <div className="relative w-[220px] lg:w-[280px] aspect-[3/4] overflow-hidden">
+                <img
+                  src={src}
+                  alt={`Photo ${i + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        <div className="px-8 lg:px-16 mt-8 md:hidden">
+          <Link
+            href="/photo-plan"
+            className="text-[11px] tracking-[0.25em] uppercase text-foreground/35 hover:text-foreground/70 transition-colors duration-300 border-b border-foreground/15 pb-px"
+          >
+            view ALL
+          </Link>
+        </div>
       </section>
 
-      {/* ── Features ── */}
-      <section className="max-w-5xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <FadeIn>
-          <p className="text-[10px] tracking-[0.45em] uppercase text-foreground/35 mb-16 text-center">Why on rêve</p>
-        </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          {features.map((f, i) => (
-            <FadeIn key={i} delay={i * 0.12}>
-              <div className="text-center">
-                <p className="text-gold text-lg mb-5 tracking-widest">{f.icon}</p>
-                <p className="text-sm tracking-[0.15em] text-foreground/80 mb-4">{f.title}</p>
-                <p className="text-xs text-foreground/50 tracking-wider leading-[2.2]">{f.desc}</p>
-              </div>
+      {/* INFO CARDS */}
+      <section className="py-20 lg:py-28 px-8 lg:px-16 bg-muted">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {infoCards.map((card, i) => (
+            <FadeIn key={card.label} delay={i * 0.1}>
+              <Link href={card.href} className="group block">
+                <div className="relative aspect-[4/3] overflow-hidden mb-5">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors duration-500" />
+                  <div className="absolute top-4 left-4">
+                    <span className="text-[9px] tracking-[0.35em] uppercase text-white/60">{card.label}</span>
+                  </div>
+                </div>
+                <h3
+                  className="text-lg font-light text-foreground mb-2 group-hover:text-foreground/70 transition-colors duration-300"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  {card.title}
+                </h3>
+                <p className="text-xs text-foreground/45 leading-loose tracking-wider">{card.desc}</p>
+                <p className="mt-4 text-[10px] tracking-[0.3em] uppercase text-foreground/35 border-b border-foreground/15 pb-px w-fit group-hover:text-foreground/60 transition-colors duration-300">
+                  詳しく見る
+                </p>
+              </Link>
             </FadeIn>
           ))}
         </div>
       </section>
 
-      {/* ── Plan Preview ── */}
-      <section className="bg-foreground text-white py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <FadeIn>
-            <p className="text-[10px] tracking-[0.45em] uppercase text-white/40 mb-6">Plan</p>
-            <h2 className="text-3xl lg:text-4xl font-light tracking-wider mb-6"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              レンタル＆撮影プラン
-            </h2>
-            <p className="text-sm text-white/50 tracking-wider leading-[2.2] max-w-xl mx-auto mb-12">
-              ドレスレンタルのみ、または撮影とのセットプランをご用意しています。
-              ヘアメイク・着付けを含む充実した内容で、当日の準備を万全に。
-            </p>
+      {/* CTA BAR */}
+      <section className="bg-muted">
+        <div className="max-w-5xl mx-auto px-8 lg:px-16 py-10 flex flex-col md:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/plan"
-              className="inline-block px-12 py-4 border border-white/30 text-[11px] tracking-[0.3em] uppercase hover:bg-white hover:text-foreground transition-all duration-300"
+              href="/reservation"
+              className="px-10 py-3 border border-foreground/20 text-foreground/60 text-[11px] tracking-[0.3em] uppercase hover:border-foreground/60 hover:text-foreground hover:shadow-[0_0_20px_rgba(200,185,160,0.5)] transition-all duration-500 text-center"
             >
-              Plan & Price
+              ご予約・お問い合わせ
             </Link>
-          </FadeIn>
+            <a
+              href="https://line.me/ti/p/sonreve"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-3 border border-foreground/20 text-foreground/60 text-[11px] tracking-[0.3em] uppercase hover:border-foreground/60 hover:text-foreground hover:shadow-[0_0_20px_rgba(200,185,160,0.5)] transition-all duration-500 text-center"
+            >
+              LINEで相談する
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-24 lg:py-32 text-center px-6">
-        <FadeIn>
-          <p
-            className="text-3xl lg:text-4xl font-light tracking-wider text-foreground mb-6"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
-          >
-            Your dream begins here.
-          </p>
-          <p className="text-xs text-foreground/45 tracking-wider mb-10">
-            まずはお気軽にお問い合わせください
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-14 py-4 bg-foreground text-white text-[11px] tracking-[0.3em] uppercase hover:bg-foreground/80 transition-all duration-300"
-          >
-            Reservation
-          </Link>
-        </FadeIn>
-      </section>
     </div>
   );
 }

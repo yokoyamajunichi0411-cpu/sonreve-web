@@ -3,122 +3,77 @@ import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "on rêveについて。韓国ウェディングドレスのレンタルと撮影を行うブランドのストーリー。",
+  title: "ブランドについて",
+  description: "son rêve（ソン・レーヴ）は大阪発の韓国ウェディングドレスレンタル・前撮りブランド。「彼の夢」「彼女の夢」、ふたりが共に選ぶ夢を形にします。",
+  alternates: { canonical: "https://sonreve.jp/about" },
+  openGraph: {
+    title: "ブランドについて | son rêve",
+    description: "son rêveは大阪発の韓国ウェディングドレスレンタル・前撮りブランド。ソウルのアトリエと直接提携し、最新コレクションをご提案します。",
+    url: "https://sonreve.jp/about",
+  },
 };
 
 export default function AboutPage() {
   return (
-    <div>
-      {/* Hero */}
-      <section className="px-6 sm:px-10 lg:px-16 pt-8 pb-10">
-        <div className="relative w-full h-[50vh] lg:h-[60vh] overflow-hidden bg-blush/30 flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-[11px] tracking-[0.4em] uppercase text-foreground/40 mb-3">Our Story</p>
-            <h1
-              className="text-3xl lg:text-5xl font-light tracking-[0.15em] text-foreground"
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
-            >
-              on rêve
-            </h1>
-          </div>
-        </div>
-      </section>
+    <div className="pt-20 lg:pt-24">
 
-      {/* Concept */}
-      <section className="max-w-2xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      {/* Brand Story */}
+      <section className="py-32 lg:py-40 px-8 lg:px-24 max-w-3xl">
         <FadeIn>
-          <p className="text-[10px] tracking-[0.45em] uppercase text-gold mb-8">Brand Concept</p>
-          <h2
-            className="text-2xl lg:text-3xl font-light tracking-wide text-foreground mb-10 leading-relaxed"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          <p
+            className="text-3xl lg:text-5xl font-light text-foreground leading-[1.25] mb-10 text-center lg:text-left"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
           >
-            夢を纏う、特別な一日
-          </h2>
-          <div className="space-y-6 text-sm text-foreground/60 tracking-wider leading-[2.4]">
+            son rêve
+          </p>
+          <p
+            className="text-xl lg:text-2xl font-light text-foreground/60 leading-[1.4] mb-10"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
+          >
+            &ldquo;his dream&rdquo; or &ldquo;her dream.&rdquo;<br />
+            But we believe it is something shared.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <div className="space-y-6 text-sm text-foreground/45 leading-loose tracking-wider max-w-sm">
             <p>
-              on rêveは、「夢を見る」を意味するフランス語から生まれたブランドです。
-              韓国の洗練されたウェディングドレス文化に魅せられ、その美しさを日本の花嫁にも届けたいという思いで立ち上げました。
+              フランス語で「son rêve（ソン・レーヴ）」は、「彼の夢」または「彼女の夢」を意味します。
+              わたしたちは、それが二人のあいだで静かに共有される夢だと考えています。
             </p>
             <p>
-              ソウルの一流アトリエと直接契約し、最新コレクションをいち早くご提案。
-              Aライン、マーメイド、ボールガウンなど多彩なスタイルの中から、あなたにぴったりの一着を見つけてください。
+              私達は、ドレスを売りません。ドレスレンタルや撮影という手段を通じて、
+              あなたが自分で選んだ体験と、あなただけの物語を提供するブランドです。
             </p>
             <p>
-              ドレスのレンタルはもちろん、ブライダル専門カメラマンによる前撮り・当日撮影もご提供。
-              着付け・ヘアメイクからデータ納品まで、すべてをワンストップで。
-              大切な記念日を、完璧な形で残すお手伝いをします。
+              韓国の洗練されたウェディング文化に着想を得ながら、大阪から関西全域へ。
+              ソウルのアトリエと直接つながり、最新のドレスをご提案します。
+            </p>
+            <p>
+              大切なのは、正しい答えを選ぶことではなく、
+              あなたが本当に感じたいことを選ぶことだと私たちは信じています。
             </p>
           </div>
         </FadeIn>
       </section>
 
-      {/* Values */}
-      <section className="bg-muted py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
-          <FadeIn>
-            <p className="text-[10px] tracking-[0.45em] uppercase text-foreground/35 mb-14 text-center">Our Values</p>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              {
-                num: "01",
-                title: "Authenticity",
-                title_ja: "本物のクオリティ",
-                desc: "韓国アトリエと直接提携。本場の品質を大阪からご提供します。",
-              },
-              {
-                num: "02",
-                title: "One Stop",
-                title_ja: "トータルサポート",
-                desc: "ドレス・ヘアメイク・撮影まで、すべてon rêveにお任せください。",
-              },
-              {
-                num: "03",
-                title: "Memory",
-                title_ja: "記憶に残る一枚",
-                desc: "写真はずっと残ります。あなたの大切な瞬間を美しく。",
-              },
-            ].map((v, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="text-center">
-                  <p
-                    className="text-4xl font-light text-gold/50 mb-5"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                  >
-                    {v.num}
-                  </p>
-                  <p className="text-sm tracking-[0.2em] uppercase text-foreground/70 mb-2"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                    {v.title}
-                  </p>
-                  <p className="text-[11px] text-foreground/40 tracking-wider mb-4">{v.title_ja}</p>
-                  <p className="text-xs text-foreground/50 tracking-wider leading-[2.2]">{v.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Info */}
-      <section className="max-w-2xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="py-32 lg:py-40 px-8 lg:px-24 max-w-2xl">
         <FadeIn>
-          <p className="text-[10px] tracking-[0.45em] uppercase text-foreground/35 mb-12">Brand Info</p>
-          <div className="divide-y divide-border/40">
+          <p className="text-[10px] tracking-[0.45em] uppercase text-foreground/30 mb-16">ブランド情報</p>
+          <div className="space-y-0 divide-y divide-border">
             {[
-              { label: "ブランド名", value: "on rêve（オン レーヴ）" },
+              { label: "ブランド名", value: "son rêve（ソン・レーヴ）" },
               { label: "拠点", value: "大阪府" },
-              { label: "取扱ドレス", value: "韓国ウェディングドレス（ソウルアトリエ直輸入）" },
-              { label: "サービス", value: "ドレスレンタル / 前撮り撮影 / ウェディング当日撮影" },
+              { label: "サービス", value: "ドレスレンタル / 前撮り / ウェディング撮影" },
               { label: "対応エリア", value: "大阪・兵庫・京都・奈良（関西全域）" },
-              { label: "Instagram", value: "@onreve_bridal" },
+              { label: "Instagram", value: "@sonreve_bridal" },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-8 py-5">
-                <span className="text-[11px] tracking-[0.2em] text-foreground/35 uppercase w-28 flex-shrink-0">
+              <div key={i} className="flex items-start gap-12 py-6">
+                <span className="text-[10px] tracking-[0.2em] text-foreground/30 w-20 flex-shrink-0 pt-0.5">
                   {item.label}
                 </span>
-                <span className="text-sm text-foreground/65 tracking-wider">{item.value}</span>
+                <span className="text-sm text-foreground/55 tracking-wider">{item.value}</span>
               </div>
             ))}
           </div>
@@ -126,17 +81,27 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 text-center border-t border-border/30 px-6">
+      <section className="py-32 px-8 lg:px-16 bg-muted flex justify-center">
         <FadeIn>
-          <p className="text-xs text-foreground/40 tracking-wider mb-8">お気軽にご相談ください</p>
-          <Link
-            href="/contact"
-            className="inline-block px-12 py-3.5 bg-foreground text-white text-[11px] tracking-[0.3em] uppercase hover:bg-foreground/80 transition-all duration-300"
-          >
-            Contact Us
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/reservation"
+              className="inline-flex items-center justify-center px-8 py-4 border border-foreground/20 text-[11px] tracking-[0.3em] uppercase text-foreground/60 hover:border-foreground/60 hover:text-foreground hover:shadow-[0_0_20px_rgba(200,185,160,0.5)] transition-all duration-500"
+            >
+              ご予約・お問い合わせ
+            </Link>
+            <a
+              href="https://line.me/ti/p/sonreve"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 border border-foreground/20 text-[11px] tracking-[0.3em] uppercase text-foreground/60 hover:border-foreground/60 hover:text-foreground hover:shadow-[0_0_20px_rgba(200,185,160,0.5)] transition-all duration-500"
+            >
+              LINEで相談する
+            </a>
+          </div>
         </FadeIn>
       </section>
+
     </div>
   );
 }

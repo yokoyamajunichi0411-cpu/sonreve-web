@@ -6,30 +6,16 @@ import type { ReactNode } from "react";
 interface FadeInProps {
   children: ReactNode;
   delay?: number;
-  direction?: "up" | "down" | "left" | "right" | "none";
   className?: string;
 }
 
-export default function FadeIn({
-  children,
-  delay = 0,
-  direction = "up",
-  className = "",
-}: FadeInProps) {
-  const directionOffset = {
-    up: { y: 30 },
-    down: { y: -30 },
-    left: { x: 30 },
-    right: { x: -30 },
-    none: {},
-  };
-
+export default function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, ...directionOffset[direction] }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.9, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 1.0, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}

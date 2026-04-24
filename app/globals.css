@@ -1,28 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #FAF8F5;
-  --foreground: #1C1C1C;
-  --cream: #F5F0EB;
-  --blush: #EDE0D8;
-  --gold: #B8967A;
-  --gold-light: #D4B89A;
-  --muted: #F0EBE6;
-  --border: #E5DDD8;
+  --background: #FFFFFF;
+  --foreground: #111111;
+  --muted: #F7F7F5;
+  --subtle: #F0F0EE;
+  --border: #E4E4E4;
+  --mid: #888888;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-cream: var(--cream);
-  --color-blush: var(--blush);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
   --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
   --color-border: var(--border);
-  --font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
-  --font-sans: 'Noto Serif JP', serif;
+  --color-mid: var(--mid);
 }
 
 @layer base {
@@ -33,20 +27,22 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: 'Noto Serif JP', serif;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
   }
 
   ::selection {
-    background-color: var(--blush);
-    color: var(--foreground);
+    background-color: #111111;
+    color: #FFFFFF;
   }
 
   img {
