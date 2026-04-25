@@ -39,7 +39,7 @@ export default function Footer() {
 
       <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-[11px] text-foreground/30 tracking-wider">
-          © {year} son rêve. All rights reserved.
+          © {year} SON RÊVE. All rights reserved.
         </p>
         <a
           href="https://instagram.com/sonreve_bridal"

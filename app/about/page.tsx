@@ -37,7 +37,7 @@ export default function AboutPage() {
         <FadeIn delay={0.15}>
           <div className="space-y-6 text-sm text-foreground/45 leading-loose tracking-wider max-w-sm">
             <p>
-              フランス語で「son rêve（ソン・レーヴ）」は、「彼の夢」または「彼女の夢」を意味します。
+              フランス語で「SON RÊVE（ソン・レーヴ）」は、「彼の夢」または「彼女の夢」を意味します。
               わたしたちは、それが二人のあいだで静かに共有される夢だと考えています。
             </p>
             <p>
@@ -63,7 +63,7 @@ export default function AboutPage() {
           <p className="text-[10px] tracking-[0.45em] uppercase text-foreground/30 mb-16">ブランド情報</p>
           <div className="space-y-0 divide-y divide-border">
             {[
-              { label: "ブランド名", value: "son rêve（ソン・レーヴ）" },
+              { label: "ブランド名", value: "SON RÊVE（ソン・レーヴ）" },
               { label: "拠点", value: "大阪府" },
               { label: "サービス", value: "ドレスレンタル / 前撮り / ウェディング撮影" },
               { label: "対応エリア", value: "大阪・兵庫・京都・奈良（関西全域）" },

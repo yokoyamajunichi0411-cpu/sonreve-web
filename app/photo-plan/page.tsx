@@ -69,7 +69,7 @@ export default function PhotoPlanPage() {
       {/* Hero */}
       <section className="px-8 lg:px-16 pb-20 lg:pb-28">
         <FadeIn>
-          <p className="text-[10px] tracking-[0.5em] uppercase text-foreground/30 mb-8">son rêve</p>
+          <p className="text-[10px] tracking-[0.5em] uppercase text-foreground/30 mb-8">SON RÊVE</p>
           <h1
             className="text-5xl lg:text-7xl font-light text-foreground tracking-wide mb-8"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}

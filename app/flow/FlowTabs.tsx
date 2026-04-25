@@ -7,7 +7,7 @@ const dressPlanSteps = [
   {
     num: "01",
     title: "ご予約",
-    desc: "son rêve公式LINEからお問い合わせのうえ、ご予約をお取りください。",
+    desc: "SON RÊVE公式LINEからお問い合わせのうえ、ご予約をお取りください。",
   },
   {
     num: "02",

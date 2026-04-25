@@ -107,7 +107,7 @@ export default function DressContent({ dress }: { dress: Dress }) {
           >
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-foreground mb-8">
-              <Link href="/" className="hover:text-foreground/60 transition-colors">son rêve</Link>
+              <Link href="/" className="hover:text-foreground/60 transition-colors">SON RÊVE</Link>
               <span>/</span>
               <Link href="/collection" className="hover:text-foreground/60 transition-colors">Collection</Link>
               <span>/</span>

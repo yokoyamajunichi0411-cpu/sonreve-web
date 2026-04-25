@@ -63,7 +63,7 @@ export default function HomePage() {
       {/* BRAND INTRO */}
       <section className="py-20 lg:py-28 px-8 lg:px-16 max-w-5xl mx-auto text-center">
         <FadeIn>
-          <p className="text-[10px] tracking-[0.5em] uppercase text-foreground/30 mb-8">son rêve — ソン・レーヴ</p>
+          <p className="text-[10px] tracking-[0.5em] uppercase text-foreground/30 mb-8">SON RÊVE — ソン・レーヴ</p>
           <h2
             className="text-3xl lg:text-5xl font-light text-foreground leading-[1.3] mb-8"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
