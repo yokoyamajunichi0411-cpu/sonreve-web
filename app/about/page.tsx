@@ -24,7 +24,7 @@ export default function AboutPage() {
             className="text-3xl lg:text-5xl font-light text-foreground leading-[1.25] mb-10 text-center lg:text-left"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
           >
-            son rêve
+            SON RÊVE
           </p>
           <p
             className="text-xl lg:text-2xl font-light text-foreground/60 leading-[1.4] mb-10"
