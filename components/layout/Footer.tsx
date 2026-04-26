@@ -10,7 +10,7 @@ export default function Footer() {
           <img
             src="/logo/sonreve_logo_white.png"
             alt="SON RÊVE"
-            className="h-16 w-auto"
+            className="h-32 w-auto"
           />
         </Link>
 

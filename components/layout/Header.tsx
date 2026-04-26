@@ -46,7 +46,7 @@ export default function Header() {
           <img
             src="/logo/sonreve_logo_dark.png"
             alt="SON RÊVE"
-            className="h-14 w-auto"
+            className="h-28 w-auto"
           />
         </Link>
 

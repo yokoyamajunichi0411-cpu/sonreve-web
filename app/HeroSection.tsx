@@ -21,7 +21,7 @@ export default function HeroSection() {
         <img
           src="/logo/sonreve_logo_white.png"
           alt="SON RÊVE"
-          className="h-16 lg:h-20 w-auto flex-shrink-0"
+          className="h-32 lg:h-40 w-auto flex-shrink-0"
         />
         <div>
           <p className="text-[10px] text-white/55 leading-relaxed tracking-wide max-w-[180px]">
