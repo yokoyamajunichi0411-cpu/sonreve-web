@@ -19,9 +19,9 @@ export default function HeroSection() {
         className="absolute top-6 left-6 lg:top-6 lg:left-10 z-10 flex items-start gap-4 pr-16"
       >
         <img
-          src="/logo/sonreve_BI.png"
-          alt="son rêve"
-          className="h-7 lg:h-8 w-auto brightness-0 invert flex-shrink-0"
+          src="/logo/sonreve_logo_white.png"
+          alt="SON RÊVE"
+          className="h-10 lg:h-12 w-auto flex-shrink-0"
         />
         <div>
           <p className="text-[10px] text-white/55 leading-relaxed tracking-wide max-w-[180px]">
