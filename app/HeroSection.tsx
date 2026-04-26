@@ -17,7 +17,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="lg:hidden absolute bottom-10 left-0 right-0 z-10 flex justify-center"
+        className="lg:hidden absolute top-6 left-0 right-0 z-10 flex justify-center"
       >
         <img
           src="/logo/sonreve_logo_white.png"
