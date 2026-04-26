@@ -12,16 +12,31 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-foreground/20" />
 
+      {/* Mobile: logo centered at bottom */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="absolute top-6 left-6 lg:top-6 lg:left-10 z-10 flex items-center gap-4 pr-16"
+        className="lg:hidden absolute bottom-10 left-0 right-0 z-10 flex justify-center"
       >
         <img
           src="/logo/sonreve_logo_white.png"
           alt="SON RÊVE"
-          className="h-32 lg:h-40 w-auto flex-shrink-0"
+          className="h-28 w-auto"
+        />
+      </motion.div>
+
+      {/* Desktop: logo + text at top-left */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="hidden lg:flex absolute top-6 left-10 z-10 items-center gap-4 pr-16"
+      >
+        <img
+          src="/logo/sonreve_logo_white.png"
+          alt="SON RÊVE"
+          className="h-40 w-auto flex-shrink-0"
         />
         <div>
           <p className="text-[10px] text-white/55 leading-relaxed tracking-wide max-w-[180px]">
