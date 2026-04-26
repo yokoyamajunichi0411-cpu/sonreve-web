@@ -44,9 +44,9 @@ export default function Header() {
           className={`flex-shrink-0 transition-opacity duration-500 ${showOverlay ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <img
-            src="/logo/sonreve_logo.png"
+            src="/logo/sonreve_logo_dark.png"
             alt="SON RÊVE"
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
