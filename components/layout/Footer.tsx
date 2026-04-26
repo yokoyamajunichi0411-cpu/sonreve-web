@@ -4,13 +4,13 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-16 px-8 lg:px-16">
+    <footer className="py-16 px-8 lg:px-16 bg-foreground">
       <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-8">
         <Link href="/">
           <img
-            src="/logo/sonreve_logo.png"
+            src="/logo/sonreve_logo_white.png"
             alt="SON RÊVE"
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
         </Link>
 
@@ -26,7 +26,7 @@ export default function Footer() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex flex-col items-center gap-0.5 text-foreground/40 hover:text-foreground/70 transition-colors duration-300"
+              className="group flex flex-col items-center gap-0.5 text-background/40 hover:text-background/70 transition-colors duration-300"
             >
               <span className="text-[11px] tracking-[0.2em] uppercase">{item.label}</span>
               <span className="text-[8px] tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
@@ -37,15 +37,15 @@ export default function Footer() {
         </nav>
       </div>
 
-      <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-[11px] text-foreground/30 tracking-wider">
+      <div className="mt-12 pt-6 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-[11px] text-background/30 tracking-wider">
           © {year} SON RÊVE. All rights reserved.
         </p>
         <a
           href="https://instagram.com/sonreve_bridal"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/30 hover:text-foreground/60 transition-colors duration-300"
+          className="text-background/30 hover:text-background/60 transition-colors duration-300"
           aria-label="Instagram"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
