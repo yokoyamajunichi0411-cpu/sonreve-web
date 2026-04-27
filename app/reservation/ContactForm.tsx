@@ -25,7 +25,7 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_KEY",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
           ...formData,
           subject: `[son rêve] ${formData.name}様よりお問い合わせ`,
         }),

@@ -66,7 +66,7 @@ const jsonLd = {
   name: "son rêve",
   description: "大阪発の韓国ウェディングドレスレンタル・前撮りブランド。ドレスレンタルから撮影まで一括対応。",
   url: siteUrl,
-  logo: `${siteUrl}/logo/sonreve_BI.png`,
+  logo: `${siteUrl}/logo/sonreve_logo_dark.png`,
   image: `${siteUrl}/og-image.jpg`,
   address: {
     "@type": "PostalAddress",
@@ -74,8 +74,22 @@ const jsonLd = {
     addressRegion: "大阪府",
     addressCountry: "JP",
   },
-  areaServed: ["大阪府", "兵庫県", "京都府", "奈良県"],
-  serviceType: ["ウェディングドレスレンタル", "前撮り撮影", "ウェディング撮影"],
+  areaServed: [
+    { "@type": "State", name: "大阪府" },
+    { "@type": "State", name: "兵庫県" },
+    { "@type": "State", name: "京都府" },
+    { "@type": "State", name: "奈良県" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "ウェディングサービス",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ドレスレンタル" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "スタジオ撮影", price: "121000", priceCurrency: "JPY" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ロケーション撮影", price: "154000", priceCurrency: "JPY" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "スタジオ＆ロケーション撮影", price: "176000", priceCurrency: "JPY" } },
+    ],
+  },
   sameAs: ["https://www.instagram.com/sonreve_bridal"],
 };
 

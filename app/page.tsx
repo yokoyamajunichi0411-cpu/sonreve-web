@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
 import DressCard from "@/components/ui/DressCard";
+import CTAButtons from "@/components/ui/CTAButtons";
 import { dresses } from "@/lib/dresses";
 import HeroSection from "./HeroSection";
 
@@ -188,23 +189,8 @@ export default function HomePage() {
 
       {/* CTA BAR */}
       <section className="bg-muted">
-        <div className="max-w-5xl mx-auto px-8 lg:px-16 py-10 flex flex-col md:flex-row items-center justify-center gap-6">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/reservation"
-              className="px-10 py-3 border border-foreground/20 text-foreground/60 text-[11px] tracking-[0.3em] uppercase hover:border-foreground/60 hover:text-foreground hover:shadow-[0_0_20px_rgba(200,185,160,0.5)] transition-all duration-500 text-center"
-            >
-              ご予約・お問い合わせ
-            </Link>
-            <a
-              href="https://line.me/ti/p/sonreve"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-10 py-3 border border-foreground/20 text-foreground/60 text-[11px] tracking-[0.3em] uppercase hover:border-foreground/60 hover:text-foreground hover:shadow-[0_0_20px_rgba(200,185,160,0.5)] transition-all duration-500 text-center"
-            >
-              LINEで相談する
-            </a>
-          </div>
+        <div className="max-w-5xl mx-auto px-8 lg:px-16 py-10 flex justify-center">
+          <CTAButtons />
         </div>
       </section>
 
